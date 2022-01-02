@@ -3,6 +3,24 @@ Implementation of the paper, **Maple - Masking words to generate blackout Poetry
 
 The link to the paper will soon be added after the presentation.
 
+If you would like to cite our work, please use the following BiBtex
+```tex
+@inproceedings{baral-etal-2021-maple,
+    title = "{MAPLE} {--} {MA}sking words to generate blackout Poetry using sequence-to-sequence {LE}arning",
+    author = "Baral, Aditeya  and
+      Jain, Himanshu  and
+      D, Deeksha  and
+      R, Dr. Mamatha H",
+    booktitle = "Proceedings of The Fourth International Conference on Natural Language and Speech Processing (ICNLSP 2021)",
+    month = "12--13 " # nov,
+    year = "2021",
+    address = "Trento, Italy",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.icnlsp-1.6",
+    pages = "47--54",
+}
+```
+
 ## Authors
 
 [Aditeya Baral](https://github.com/aditeyabaral) <br>
