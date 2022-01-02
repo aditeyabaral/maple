@@ -1,7 +1,5 @@
 # MAPLE - Masking words to generate blackout Poetry using sequence-to-sequence LEarning
-Implementation of the paper, **Maple - Masking words to generate blackout Poetry using sequence-to-sequence LEarning**, ICNLSP 2021
-
-The link to the paper will soon be added after the presentation.
+Implementation of the paper, **Maple - Masking words to generate blackout Poetry using sequence-to-sequence LEarning**, ICNLSP 2021 [[PDF]](https://aclanthology.org/2021.icnlsp-1.6.pdf)
 
 If you would like to cite our work, please use the following BiBtex
 ```tex
