@@ -1,3 +1,6 @@
+# Code is a modified verison of
+# Liza Daly's pattern extraction: https://github.com/lizadaly/blackout
+
 import random
 import string
 import spacy
@@ -13,6 +16,7 @@ args = parser.parse_args()
 
 input_file = args.input
 output_file = args.output
+
 
 def parse_words(poem):
     word_list = []
@@ -181,6 +185,7 @@ def generateBlackoutPoem(input_poem):
     print("Output Generated")
 
     return out_poem
+
 
 poems = list()
 with open(input_file) as passage_file, open(output_file, 'w') as output_file:
