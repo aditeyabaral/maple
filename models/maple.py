@@ -34,18 +34,18 @@ class MapleDataset(torch.utils.data.Dataset):
 
 def encode_tags(tags, encodings):
     labels = [[tag2id[tag] for tag in doc] for doc in tags]
-    encoded_labels = []
-    for doc_labels, doc_offset in zip(labels, encodings.offset_mapping):
-        doc_enc_labels = np.ones(len(doc_offset), dtype=int) * -100
-        arr_offset = np.array(doc_offset)
-
-        try:
-            doc_enc_labels[(arr_offset[:, 0] == 0) & (
-                arr_offset[:, 1] != 0)] = doc_labels
-            encoded_labels.append(doc_enc_labels.tolist())
-        except:
-            pass
-
+    encoded_labels = list()
+    for i, label in enumerate(labels):
+        word_ids = encodings.word_ids(batch_index=i)
+        previous_word_idx = None
+        label_ids = list()
+        for word_idx in word_ids:
+            if word_idx is None:
+                label_ids.append(-100)
+            elif word_idx != previous_word_idx:
+                label_ids.append(label[word_idx])
+            # previous_word_idx = word_idx
+    encoded_labels.append(label_ids)
     return encoded_labels
 
 
