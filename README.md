@@ -2,6 +2,7 @@
 Implementation of the paper, **Maple - Masking words to generate blackout Poetry using sequence-to-sequence LEarning**, ICNLSP 2021 
 
 [[PDF]](https://aclanthology.org/2021.icnlsp-1.6.pdf)
+[[MAPLE MODELS]](https://huggingface.co/maple)
 
 If you would like to cite our work, please use the following BiBTex
 
