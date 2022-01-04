@@ -67,7 +67,9 @@ The passage is the text from which the poem is generated. The poem is the genera
 
 ## Train MAPLE
 
-To train the primary Transformer based MAPLE model, use the `maple.py` script inside `models/`. The arguments are self explanatory:
+All MAPLE models are present inside the `models/` directory.
+
+To train the primary Transformer based MAPLE model, use the `maple.py` script. The arguments are self explanatory.
 ```bash
 usage: python maple.py [-h] --model MODEL --dataset DATASET [--hub HUB] [--batch_size BATCH_SIZE] [--learning_rate LEARNING_RATE]
                 [--epochs EPOCHS] [--username USERNAME] [--password PASSWORD] [--output OUTPUT] [--hub_name HUB_NAME]
@@ -96,7 +98,7 @@ optional arguments:
                         Name of the model in the HuggingFace Hub
 ```
 
-Alternatively, you can also compare it with abstractive summarization. The `models/abstractive_summarization.py` script can be run using the following arguments.
+Alternatively, the `abstractive_summarization.py` script can be run using the following arguments.
 
 ```bash
 usage: python abstractive_summarization.py [-h] --input INPUT --output OUTPUT [--poem_length POEM_LENGTH]
