@@ -31,7 +31,7 @@ class MapleDataset(torch.utils.data.Dataset):
         return len(self.labels)
 
 
-def encode_tags(tags, encodings):
+def encode_tags(tags, encodings, label_all_tokens=True):
     labels = [[tag2id[tag] for tag in doc] for doc in tags]
     encoded_labels = list()
     for i, label in enumerate(labels):
@@ -43,7 +43,9 @@ def encode_tags(tags, encodings):
                 label_ids.append(-100)
             elif word_idx != previous_word_idx:
                 label_ids.append(label[word_idx])
-            # previous_word_idx = word_idx
+            else:
+                label_ids.append(label[word_idx] if label_all_tokens else -100)
+            previous_word_idx = word_idx
         encoded_labels.append(label_ids)
     return encoded_labels
 
