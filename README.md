@@ -76,7 +76,7 @@ usage: python maple.py [-h] --model MODEL --dataset DATASET [--hub HUB] [--batch
 optional arguments:
   -h, --help            show this help message and exit
   --model MODEL, -m MODEL
-                        Transformer model name/path to siamese pre-train
+                        Transformer model name/path to train
   --dataset DATASET, -d DATASET
                         Path to dataset in required format
   --hub HUB, -hf HUB    Push model to HuggingFace Hub

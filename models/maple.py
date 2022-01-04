@@ -1,9 +1,8 @@
 import os
 import nltk
+import torch
 import argparse
 import platform
-import torch
-import numpy as np
 import pandas as pd
 from datasets import Dataset
 from transformers import AutoTokenizer
@@ -45,13 +44,13 @@ def encode_tags(tags, encodings):
             elif word_idx != previous_word_idx:
                 label_ids.append(label[word_idx])
             # previous_word_idx = word_idx
-    encoded_labels.append(label_ids)
+        encoded_labels.append(label_ids)
     return encoded_labels
 
 
 parser = argparse.ArgumentParser(description='Train a MAPLE Transformer Model')
 parser.add_argument('--model', '-m', type=str,
-                    help='Transformer model name/path to siamese pre-train', required=True)
+                    help='Transformer model name/path to train', required=True)
 parser.add_argument('--dataset', '-d', type=str,
                     help='Path to dataset in required format', required=True)
 parser.add_argument('--hub', '-hf', type=bool,
@@ -100,7 +99,7 @@ if PUSH_TO_HUB is not None and PUSH_TO_HUB:
 
 df = pd.read_json(DATASET_PATH)
 df = df.drop_duplicates(subset=["passage", "poem"])
-df["tokens"] = df["poem"].apply(lambda x: word_tokenize(x))
+df["tokens"] = df["passage"].apply(lambda x: word_tokenize(x))
 ner_tags = list()
 for i in range(df.shape[0]):
     indices = df["indices"][i]
